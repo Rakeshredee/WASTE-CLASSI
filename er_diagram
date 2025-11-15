@@ -1,0 +1,15 @@
+digraph ER_Diagram {
+	"Preprocessed Images" [shape=box]
+	"Classification Results" [shape=box]
+	"Preprocessed Images" -> image_id [label=PK]
+	"Preprocessed Images" -> image_path
+	"Preprocessed Images" -> category
+	"Preprocessed Images" -> preprocessing_details
+	"Preprocessed Images" -> upload_date
+	"Classification Results" -> result_id [label=PK]
+	"Classification Results" -> image_id [label=FK]
+	"Classification Results" -> predicted_class
+	"Classification Results" -> confidence_score
+	"Classification Results" -> timestamp
+	"Preprocessed Images" -> "Classification Results" [label="1:N (image_id)"]
+}
